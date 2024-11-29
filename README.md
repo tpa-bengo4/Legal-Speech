@@ -1,5 +1,9 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+
+![DALL·E 2024-11-29 00 30 27 - A simple logo design for a speech-to-text functionality with a legal theme  The logo features a minimalistic microphone icon with a single sound wave  copy 2](https://github.com/user-attachments/assets/04be0d43-32af-40dd-a42e-6fe6849a1cb4)
+
+
+## 現状の問題点
 
 Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
