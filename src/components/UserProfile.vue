@@ -9,6 +9,14 @@
       icon-link="/src/assets/images/link-svgrepo-com.svg"
       text="リンク"
     />
+    <UserProfileDropdown
+      icon-link="/src/assets/images/file-svgrepo-com.svg"
+      text="ファイル"
+    />
+    <UserProfileDropdown
+      icon-link="/src/assets/images/image-svgrepo-com.svg"
+      text="画像・ビデオ"
+    />
   </div>
 </template>
 
