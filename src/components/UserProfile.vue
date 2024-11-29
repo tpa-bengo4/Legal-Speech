@@ -5,11 +5,16 @@
     <p>役員・法務事務所</p>
     <p>性別</p>
     <p>連絡先</p>
+    <UserProfileDropdown
+      icon-link="/src/assets/images/link-svgrepo-com.svg"
+      text="リンク"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import UserAvatar from "./UserAvatar.vue";
+import UserProfileDropdown from "./UserProfileDropdown.vue";
 </script>
 
 <style lang="css" scoped>
