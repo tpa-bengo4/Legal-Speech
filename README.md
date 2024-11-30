@@ -69,7 +69,6 @@ npm run coverage
 
 以上でセットアップと基本操作の説明は完了です！ 🎉 開発をお楽しみください。
 
-
 ## 現状の問題点
 
 Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
