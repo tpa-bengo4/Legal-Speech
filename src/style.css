@@ -60,8 +60,8 @@ button:focus-visible {
 }
 
 #app {
+  height: 100vh;
   margin: 0 auto !important;
-  padding: 1rem;
   text-align: center;
 }
 

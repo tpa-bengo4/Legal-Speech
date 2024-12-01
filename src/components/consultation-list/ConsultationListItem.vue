@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import FileList from "@/components/consultation-list/file-list/FileList.vue";
 import Message from "@/types";
 import { CONSULTATION_LIST_ITEM_IMAGE_DIMENSION } from "@/constants";
 
@@ -13,7 +12,8 @@ interface Props {
   status: string;
 }
 
-const { photoSource, name, lastMessage, attachments, status } = defineProps<Props>();
+const { photoSource, name, lastMessage, attachments, status } =
+  defineProps<Props>();
 </script>
 <template>
   <div class="container">
@@ -40,9 +40,6 @@ const { photoSource, name, lastMessage, attachments, status } = defineProps<Prop
         <p class="last-message-timestamp">・{{ lastMessage.timestamp }}</p>
       </div>
     </div>
-
-    <!-- File List -->
-    <FileList :fileList="attachments" />
   </div>
 </template>
 <style scoped>
@@ -78,7 +75,7 @@ const { photoSource, name, lastMessage, attachments, status } = defineProps<Prop
   right: 0;
   width: 10px;
   height: 10px;
-  background-color: #02c42f; 
+  background-color: #02c42f;
   border-radius: 50%;
 }
 
