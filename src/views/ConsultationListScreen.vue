@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ScreenHeader from "@/components/screen-header/ScreenHeader.vue";
 import ConsultationList from "@/components/consultation-list/ConsultationList.vue";
-
 </script>
 <template>
   <div class="consultation-list-screen">
@@ -15,5 +14,4 @@ import ConsultationList from "@/components/consultation-list/ConsultationList.vu
   height: 95vh;
   padding: 5px 10px;
 }
-
 </style>

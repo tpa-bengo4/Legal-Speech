@@ -2,7 +2,6 @@
 import { SCREEN_HEADER_LOGO } from "@/constants";
 
 const { HEIGHT: height, WIDTH: width } = SCREEN_HEADER_LOGO;
-
 </script>
 <template>
   <div class="screen-header">

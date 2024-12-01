@@ -7,9 +7,8 @@ import { Consultation } from "@/types";
 const consultationList = ConsultationListData.consultations;
 
 const selectConsultation = (consultation: Consultation) => {
-    console.log(consultation);
-}
-
+  console.log(consultation);
+};
 </script>
 
 <template>
