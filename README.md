@@ -3,7 +3,6 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/04be0d43-32af-40dd-a42e-6fe6849a1cb4" width="200" title="legal speech logo"/>
 
-   
   <img src="https://vuejs.org/images/logo.png" alt="Vue.js Logo" width="150" />
 </p>
 

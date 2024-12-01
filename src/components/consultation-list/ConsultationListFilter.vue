@@ -1,9 +1,5 @@
 <script setup lang="ts"></script>
 <template>
-<div class="container">
-    Filter
-</div>
+  <div class="container">Filter</div>
 </template>
-<style scoped>
-
-</style>
+<style scoped></style>
