@@ -4,7 +4,7 @@ import ConsultationListItem from "@/components/consultation-list/ConsultationLis
 import ConsultationListData from "@/assets/json/consultations-list.json";
 import { Consultation } from "@/types";
 
-const consultationList = ConsultationListData.consultations;
+const consultationList : Consultation[] = [];
 
 const selectConsultation = (consultation: Consultation) => {
   console.log(consultation);
