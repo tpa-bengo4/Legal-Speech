@@ -17,7 +17,7 @@ const { photoSource, name, lastMessage, attachments, status } =
 </script>
 <template>
   <div class="container">
-    <!-- Partner Photo with Status Dot -->
+    <!--ステータスドット付きパートナー写真 -->
     <div class="photo-container">
       <img
         class="partner-photo"
@@ -27,11 +27,11 @@ const { photoSource, name, lastMessage, attachments, status } =
         alt="partner photo"
         aria-label="partner photo"
       />
-      <!-- Green dot for online status -->
+      <!-- 緑色の点はオンライン ステータスを示します -->
       <div v-if="status === 'オンライン'" class="status-dot"></div>
     </div>
 
-    <!-- Consultation Preview Section -->
+    <!-- 相談プレビューセクション -->
     <div class="consultation-preview">
       <p class="partner-name">{{ name }}</p>
       <div class="last-message">
@@ -61,7 +61,7 @@ const { photoSource, name, lastMessage, attachments, status } =
 }
 
 .photo-container {
-  position: relative; /* To position the status dot */
+  position: relative; /* ステータスドットを配置するには */
 }
 
 .partner-photo {
@@ -101,16 +101,16 @@ const { photoSource, name, lastMessage, attachments, status } =
 .last-message-text {
   display: inline;
   color: #000;
-  margin: 0; /* Remove any default margin */
+  margin: 0; /* デフォルトのマージンを削除する */
   padding: 0;
-}
-
-.last-message-timestamp {
-  color: #888;
 }
 
 .partner-name {
   font-weight: 500;
+}
+
+.last-message-timestamp {
+  color: #888;
 }
 
 .last-message-text {

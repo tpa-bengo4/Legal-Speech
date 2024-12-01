@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ConsultationListFilter from "@/components/consultation-list/ConsultationListFilter.vue";
+import ConsultationListHeader from "@/components/consultation-list/ConsultationListHeader.vue";
 import ConsultationListItem from "@/components/consultation-list/ConsultationListItem.vue";
 import ConsultationListData from "@/assets/json/consultations-list.json";
 import { Consultation } from "@/types";
@@ -13,10 +13,11 @@ const selectConsultation = (consultation: Consultation) => {
 
 <template>
   <div class="consultation-list-container">
-    <div class="title-container">
-      <p class="title">相談リスト</p>
-    </div>
-    <div class="consultation-list">
+    <!-- 相談リストヘッダセッション -->
+    <ConsultationListHeader title="相談リスト" />
+
+    <!-- 相談リストセッション -->
+    <div v-if="consultationList.length > 0" class="consultation-list">
       <ConsultationListItem
         v-for="consultation in consultationList"
         :key="consultation.id"
@@ -28,6 +29,9 @@ const selectConsultation = (consultation: Consultation) => {
         @click="selectConsultation(consultation)"
       />
     </div>
+
+    <!-- 相談のリストが空の場合 -->
+    <p v-else class="empty-message">相談リストがありません。</p>
   </div>
 </template>
 <style scoped>
@@ -39,21 +43,15 @@ const selectConsultation = (consultation: Consultation) => {
     rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
-.title-container {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 15px;
-  padding: 10px;
-}
-.title {
-  font-size: 24px;
-  font-weight: 800;
-  align-self: flex-start;
-  color: #000;
-}
 
 .consultation-list {
   height: 80vh;
   overflow: scroll;
+}
+
+.empty-message {
+  font-size: 30px;
+  font-weight: 700;
+  color: red;
 }
 </style>
