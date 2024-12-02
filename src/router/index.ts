@@ -11,8 +11,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/ConsultationScreen.vue"),
   },
   {
-    ...VIEW_CONFIG.TEST,
-    component: () => import("@/views/TestScreen.vue"),
+    ...VIEW_CONFIG.CHAT,
+    component: () => import("@/views/ChatScreen.vue"),
   },
 ];
 

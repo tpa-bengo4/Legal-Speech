@@ -14,7 +14,6 @@ const { iconLink, text } = defineProps<{
   text: string;
 }>();
 
-console.log(iconLink);
 </script>
 
 <style lang="css" scoped>
