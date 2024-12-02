@@ -6,14 +6,13 @@ const searchQuery = ref("");
 
 // 親コンポーネントに 'change' イベントを発火させるための emit 定義
 const emit = defineEmits<{
-  (e: 'change', query: string): void
-}>()
+  (e: "change", query: string): void;
+}>();
 
 // 検索クエリが変更された時に呼ばれる関数
 const handleSearchQueryChange = () => {
-    emit('change', searchQuery.value);
-}
-
+  emit("change", searchQuery.value);
+};
 </script>
 
 <template>
@@ -53,7 +52,7 @@ const handleSearchQueryChange = () => {
 }
 
 .search-label {
-    color: #000;
+  color: #000;
 }
 
 .search-results {

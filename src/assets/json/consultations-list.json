@@ -25,7 +25,7 @@
         },
         {
           "name": "test-pdf2.png",
-          "url": "@/assets/pdf/test-pdf.pdf",
+          "url": "@/assets/pdf/test-pdf.png",
           "type": "image"
         },
         {
@@ -35,13 +35,13 @@
         },
         {
           "name": "test-pdf4.pdf",
-          "url": "@/assets/pdf/test-pdf.pdf",
-          "type": "pdf"
+          "url": "@/assets/pdf/test-pdf.png",
+          "type": "image"
         },
         {
           "name": "test-pdf5.pdf",
-          "url": "@/assets/pdf/test-pdf.pdf",
-          "type": "pdf"
+          "url": "@/assets/pdf/test-pdf.docs",
+          "type": "doc"
         },
         {
           "name": "test-pdf6.pdf",
