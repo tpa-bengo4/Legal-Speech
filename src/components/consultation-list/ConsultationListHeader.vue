@@ -15,7 +15,6 @@ const { title = "相談リスト" } = defineProps<Props>();
 .title-container {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 15px;
   padding: 10px;
 }
 .title {

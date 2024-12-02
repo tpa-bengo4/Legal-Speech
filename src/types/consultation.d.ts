@@ -8,6 +8,6 @@ export type Consultation = {
   name: string; // 相談相手の名前
   status: string; // 相談相手のステータス（例: オンライン, オフライン）
   lastMessage?: Message; // 最後のメッセージ（任意）
-  messages: Message[]; // 相談中の全メッセージ
+  messages?: Message[]; // 相談中の全メッセージ
   attachments: Attachment[]; // 添付ファイルのリスト
 };
