@@ -1,23 +1,21 @@
-import vuePlugin from "eslint-plugin-vue";
-import eslintRecommended from "@eslint/js";
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
+import pluginVue from "eslint-plugin-vue";
+import vueParser from "vue-eslint-parser";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
-  eslintRecommended.configs.recommended, // ESLint base rules
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...pluginVue.configs["flat/essential"],
   {
-    files: ["**/*.ts", "**/*.js", "**/*.vue"],
-    plugins: {
-      vue: vuePlugin, // Register the Vue plugin
-    },
+    files: ["*.vue", "**/*.vue"],
     languageOptions: {
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
-    },
-    rules: {
-      ...vuePlugin.configs["vue3-recommended"].rules, // Spread Vue rules
-      // Add your custom rules here
-      "vue/attributes-order": "error", // Example rule from Vue plugin
+      parser: vueParser,
+      parserOptions: { parser: tseslint.parser, sourceType: "module" },
     },
   },
+  eslintConfigPrettier,
 ];

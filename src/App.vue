@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import UserProfile from "./components/UserProfile.vue";
-</script>
-
 <template>
-  <UserProfile />
+  <div id="app">
+    <router-view />
+  </div>
 </template>
-
-<style scoped></style>
