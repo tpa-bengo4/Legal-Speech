@@ -5,6 +5,7 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  baseUrl: "/legal-speech/",
   resolve: {
     extensions: [
       ".mjs",
