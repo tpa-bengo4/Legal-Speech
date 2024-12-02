@@ -24,7 +24,7 @@ import SendIcon from "@/assets/images/send-message-svgrepo-com.svg"
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #d0d0d0;
+  background-color: #ccc;
   padding: 8px;
   border-top: 1px solid #ccc;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
@@ -38,6 +38,7 @@ import SendIcon from "@/assets/images/send-message-svgrepo-com.svg"
   font-size: 16px;
   margin-right: 8px;
   margin-left: 8px;
+  background-color: white;
 }
 
 .voice-button,
@@ -50,7 +51,7 @@ import SendIcon from "@/assets/images/send-message-svgrepo-com.svg"
   justify-content: center;
   margin: 0 8px 0 8px;
   border-radius: 50%;
-  background-color: #d0d0d0;
+  background-color: #ccc;
 }
 
 .voice-button img,
