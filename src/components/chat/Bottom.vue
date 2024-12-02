@@ -1,22 +1,50 @@
 <template>
-    <div class="bottom">
-      <input
-        type="text"
-        class="message-input"
-        placeholder="メッセージを入力する"
-      />
-      <button class="voice-button">
-        <img :src="VoiceIcon" alt="Voice Chat" />
-      </button>
-      <button class="send-button">
-        <img :src="SendIcon" alt="Send Message" />
-      </button>
-    </div>
-  </template>
+  <div class="bottom">
+    <input
+      type="text"
+      class="message-input"
+      placeholder="メッセージを入力する"
+      v-model="transcript"
+    />
+    <button class="voice-button" @click="handleRecord">
+      <img :src="VoiceIcon" alt="Voice Chat" />
+    </button>
+    <button class="send-button">
+      <img :src="SendIcon" alt="Send Message" />
+    </button>
+  </div>
+</template>
 
 <script setup lang="ts">
-import VoiceIcon from "@/assets/images/voice-circle-fill-svgrepo-com.svg"
-import SendIcon from "@/assets/images/send-message-svgrepo-com.svg"
+import VoiceIcon from "@/assets/images/voice-circle-fill-svgrepo-com.svg";
+import SendIcon from "@/assets/images/send-message-svgrepo-com.svg";
+import { ref, watch } from "vue";
+import { useSpeechRecognition } from "@vueuse/core";
+const transcript = ref("");
+const isRecording = ref(true);
+
+const { isFinal, result, start, stop } = useSpeechRecognition({
+  lang: "ja-JP",
+  interimResults: true,
+  continuous: true,
+});
+
+const handleRecord = () => {
+  if (isRecording.value) {
+    start();
+  }
+
+  if (!isRecording.value) {
+    stop();
+  }
+  isRecording.value = !isRecording.value;
+};
+
+watch([result, isFinal], ([newValue]) => {
+  if (isFinal.value) {
+    transcript.value += newValue;
+  }
+});
 </script>
 
 <style lang="css" scoped>
