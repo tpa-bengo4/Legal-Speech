@@ -40,6 +40,7 @@ const { photoSource, name, lastMessage, status } =
         <p class="last-message-timestamp">・{{ lastMessage.timestamp }}</p>
       </div>
     </div>
+    <FileList :fileList="attachments" />
   </div>
 </template>
 <style scoped>
