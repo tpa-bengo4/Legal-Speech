@@ -28,6 +28,7 @@ console.log(iconLink);
   justify-content: space-between;
   padding-left: 35px;
   padding-right: 35px;
+  gap: 5px;
 }
 
 .dropdown img {
