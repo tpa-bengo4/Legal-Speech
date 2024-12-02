@@ -16,12 +16,9 @@ export const startRecord = () => {
 };
 
 export const stopRecord = async () => {
-  mediaRecorder.addEventListener("stop", () => {
-    const audioBlob = new Blob(audioChunks);
-    const recordedVoice = URL.createObjectURL(audioBlob);
-    audioChunks = [];
-    (<any>window).blobURL = recordedVoice;
-  });
+  const audioBlob = new Blob(audioChunks);
+  const recordedVoice = URL.createObjectURL(audioBlob);
+  audioChunks = [];
 
   mediaRecorder.stop();
 
@@ -29,6 +26,6 @@ export const stopRecord = async () => {
     media.getTracks().forEach((track) => track.stop());
   });
 
-  const convertedText = await convertVoiceToText((<any>window).blobURL);
+  const convertedText = await convertVoiceToText(recordedVoice);
   return convertedText;
 };

@@ -11,7 +11,10 @@ const getBase64Data = async (audioFilePath: string) => {
   return result;
 };
 
-export async function convertVoiceToText(audioFile: string) {
+export async function convertVoiceToText(
+  audioFile: string,
+  language: string = "日本語",
+) {
   const file = await getBase64Data(audioFile);
 
   const result = await geminiModel.generateContent([
@@ -21,7 +24,7 @@ export async function convertVoiceToText(audioFile: string) {
         mimeType: "audio/mp4",
       },
     },
-    buildGeminirompt("日本語"),
+    buildGeminirompt(language),
   ]);
 
   const candidates = result.response.candidates as GenerateContentCandidate[];
