@@ -6,7 +6,6 @@ import path from "path";
 export default defineConfig({
   plugins: [vue()],
   base: "/legal-speech/",
-  publicPath:"/legal-speech/",
   resolve: {
     extensions: [
       ".mjs",
