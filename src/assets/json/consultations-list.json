@@ -1,0 +1,186 @@
+{
+  "user": {
+    "id": 1,
+    "name": "山本",
+    "profilePicture": "https://image.ibb.co/gSyTOb/bob_1.jpg",
+    "status": "オンライン"
+  },
+  "consultations": [
+    {
+      "id": 2,
+      "partnerId": 2,
+      "name": "佐藤",
+      "profilePicture": "https://image.ibb.co/cA2oOb/alex_1.jpg",
+      "status": "オンライン",
+      "lastMessage": {
+        "text": "相談事項について整理しておきます。",
+        "timestamp": "午前11:00",
+        "side": "right"
+      },
+      "attachments": [
+        {
+          "name": "test-pdf1.pdf",
+          "url": "@/assets/pdf/test-pdf.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "test-pdf2.png",
+          "url": "@/assets/pdf/test-pdf.png",
+          "type": "image"
+        },
+        {
+          "name": "test-pdf3.pdf",
+          "url": "@/assets/pdf/test-pdf.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "test-pdf4.pdf",
+          "url": "@/assets/pdf/test-pdf.png",
+          "type": "image"
+        },
+        {
+          "name": "test-pdf5.pdf",
+          "url": "@/assets/pdf/test-pdf.docs",
+          "type": "doc"
+        },
+        {
+          "name": "test-pdf6.pdf",
+          "url": "@/assets/pdf/test-pdf.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "test-pdf7.pdf",
+          "url": "@/assets/pdf/test-pdf.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "test-pdf8.pdf",
+          "url": "@/assets/pdf/test-pdf.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "test-pdf9.pdf",
+          "url": "@/assets/pdf/test-pdf.pdf",
+          "type": "pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "partnerId": 3,
+      "name": "鈴木",
+      "profilePicture": "https://image.ibb.co/k0wVTm/profile_pic.jpg",
+      "status": "オフライン",
+      "lastMessage": {
+        "text": "来週のミーティングで議題に加えたい内容です。",
+        "timestamp": "午後2:45",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 4,
+      "partnerId": 4,
+      "name": "田中",
+      "profilePicture": "https://image.ibb.co/jOzeUG/luke_1.jpg",
+      "status": "オンライン",
+      "lastMessage": {
+        "text": "契約書案を確認しました。",
+        "timestamp": "午後3:20",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 8,
+      "partnerId": 8,
+      "name": "山田",
+      "profilePicture": "https://image.ibb.co/eLVWbw/katie_1.jpg",
+      "status": "オンライン",
+      "lastMessage": {
+        "text": "次回のミーティングの日時を調整しましょう。",
+        "timestamp": "午前10:15",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 9,
+      "partnerId": 9,
+      "name": "小林",
+      "profilePicture": "https://image.ibb.co/ncAa3b/chloe_1.jpg",
+      "status": "オフライン",
+      "lastMessage": {
+        "text": "提案書に関して数点修正を加えました。",
+        "timestamp": "昨日",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 10,
+      "partnerId": 10,
+      "name": "中村",
+      "profilePicture": "https://image.ibb.co/fxZqgw/jon_1.jpg",
+      "status": "オンライン",
+      "lastMessage": {
+        "text": "スケジュールの変更は可能ですか？",
+        "timestamp": "午後1:45",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 11,
+      "partnerId": 11,
+      "name": "斎藤",
+      "profilePicture": "https://image.ibb.co/j4Ov3b/darth_vader_1.png",
+      "status": "オフライン",
+      "lastMessage": {
+        "text": "手続きが完了次第、連絡いたします。",
+        "timestamp": "水曜日",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 12,
+      "partnerId": 12,
+      "name": "松本",
+      "profilePicture": "https://image.ibb.co/b4kxGw/zach_1.jpg",
+      "status": "オンライン",
+      "lastMessage": {
+        "text": "確認後、こちらから再度連絡いたします。",
+        "timestamp": "午後4:00",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 13,
+      "partnerId": 13,
+      "name": "伊藤",
+      "profilePicture": "https://image.ibb.co/k0wVTm/profile_pic.jpg",
+      "status": "オフライン",
+      "lastMessage": {
+        "text": "その件についての詳細を送ります。",
+        "timestamp": "午前11:30",
+        "side": "left"
+      },
+      "attachments": []
+    },
+    {
+      "id": 14,
+      "partnerId": 14,
+      "name": "渡辺",
+      "profilePicture": "https://image.ibb.co/cA2oOb/alex_1.jpg",
+      "status": "オンライン",
+      "lastMessage": {
+        "text": "近日中にミーティングを開催したいです。",
+        "timestamp": "午後2:10",
+        "side": "left"
+      },
+      "attachments": []
+    }
+  ]
+}
