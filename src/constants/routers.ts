@@ -9,4 +9,9 @@ export const VIEW_CONFIG = {
     name: "consultation",
     path: "/consultation",
   },
+  TEST: {
+    label: "テストページ",
+    name: "test",
+    path: "/test",
+  },
 } as const;

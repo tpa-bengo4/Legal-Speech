@@ -10,6 +10,10 @@ const routes: Array<RouteRecordRaw> = [
     ...VIEW_CONFIG.CONSULTATION,
     component: () => import("@/views/ConsultationScreen.vue"),
   },
+  {
+    ...VIEW_CONFIG.TEST,
+    component: () => import("@/views/TestScreen.vue"),
+  },
 ];
 
 const router = createRouter({
