@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
+// GEMINIモデルを宣言する
 const genAI = new GoogleGenerativeAI(
   import.meta.env.VITE_GEMINI_API_KEY || "<API_KEY>",
 );

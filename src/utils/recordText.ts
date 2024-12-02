@@ -4,6 +4,9 @@ let mediaRecorder: MediaRecorder;
 let audioChunks: BlobPart[] = [];
 let medias: Promise<MediaStream>;
 
+/**
+ * 録音しはじめる関数
+ */
 export const startRecord = () => {
   medias = navigator.mediaDevices.getUserMedia({ audio: true });
   medias.then((stream) => {
@@ -15,7 +18,11 @@ export const startRecord = () => {
   });
 };
 
-export const stopRecord = async () => {
+/**
+ * 音声の録音を停止し、テキストに変化する関数
+ * @returns {Promise<string>} 変化されてテキスト
+ */
+export const stopRecord = async (): Promise<string> => {
   const audioBlob = new Blob(audioChunks);
   const recordedVoice = URL.createObjectURL(audioBlob);
   audioChunks = [];
