@@ -3,40 +3,50 @@ import ConsultationListHeader from "@/components/consultation-list/ConsultationL
 import ConsultationListSearch from "@/components/consultation-list/ConsultationListSearch.vue";
 import ConsultationListItem from "@/components/consultation-list/ConsultationListItem.vue";
 import ConsultationListData from "@/assets/json/consultations-list.json";
-import { Consultation } from "@/types";
-import { ref } from "vue";
+import { Consultation, Message } from "@/types";
+import { ref, Ref } from "vue";
 
-const consultationList : Consultation[] = ref(ConsultationListData.consultations);
+const DEFAULT_LAST_MESSAGE: Message = {
+  text: "",
+  timestamp: "now",
+  side: "right",
+};
+
+const DEFAULT_PHOTO_SOURCE = "@/assets/image/default-photo.svg";
+
+const consultationList: Ref<Consultation[]> = ref(
+  ConsultationListData.consultations,
+);
 
 const selectConsultation = (consultation: Consultation) => {
   console.log(consultation);
 };
 
 const handleSearch = (query: string) => {
-    if (query.length === 0) {
-      consultationList.value = ConsultationListData.consultations;
-    } else {
-      consultationList.value = consultationList.value.filter((consultation) =>
-        consultation.name.toLowerCase().includes(query.toLowerCase()) // 名前に検索文字列が含まれているか
+  if (query.length === 0) {
+    consultationList.value = ConsultationListData.consultations;
+  } else {
+    consultationList.value = consultationList.value.filter(
+      (consultation) =>
+        consultation.name.toLowerCase().includes(query.toLowerCase()), // 名前に検索文字列が含まれているか
     );
-    }
-}
-
+  }
+};
 </script>
 
 <template>
   <div class="consultation-list-container">
     <!-- 相談リストヘッダセッション -->
     <ConsultationListHeader title="相談リスト" />
-    <ConsultationListSearch @change="handleSearch"/>
+    <ConsultationListSearch @change="handleSearch" />
     <!-- 相談リストセッション -->
     <div v-if="consultationList.length > 0" class="consultation-list">
       <ConsultationListItem
         v-for="consultation in consultationList"
         :key="consultation.id"
         :name="consultation.name"
-        :photoSource="consultation.profilePicture"
-        :lastMessage="consultation.lastMessage"
+        :photoSource="consultation.profilePicture ?? DEFAULT_PHOTO_SOURCE"
+        :lastMessage="consultation.lastMessage ?? DEFAULT_LAST_MESSAGE"
         :attachments="consultation.attachments"
         :status="consultation.status"
         @click="selectConsultation(consultation)"

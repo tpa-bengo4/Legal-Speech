@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {Consultation} from "@/types";
 import { ref } from "vue";
 
 // 検索クエリを保存するための変数

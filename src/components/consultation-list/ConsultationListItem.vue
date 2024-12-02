@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import Message from "@/types";
+import { Message, Attachment } from "@/types";
 import { CONSULTATION_LIST_ITEM_IMAGE_DIMENSION } from "@/constants";
 
 const { HEIGHT: height, WIDTH: width } = CONSULTATION_LIST_ITEM_IMAGE_DIMENSION;
 
 interface Props {
-  photoSource: string | null;
+  photoSource: string;
   name: string;
   lastMessage: Message;
-  attachments: string[];
+  attachments: Attachment[];
   status: string;
 }
 
-const { photoSource, name, lastMessage, attachments, status } =
+const { photoSource, name, lastMessage, status } =
   defineProps<Props>();
 </script>
 <template>
