@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory("/legal-speech"),
+  history: createWebHashHistory(),
   routes,
 });
 
