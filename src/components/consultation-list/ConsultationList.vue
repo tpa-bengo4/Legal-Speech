@@ -43,6 +43,7 @@ const handleSearch = (query: string) => {
     <div v-if="consultationList.length > 0" class="consultation-list">
       <ConsultationListItem
         v-for="consultation in consultationList"
+        :userId="consultation.partnerId"
         :key="consultation.id"
         :name="consultation.name"
         :photoSource="consultation.profilePicture ?? DEFAULT_PHOTO_SOURCE"

@@ -9,4 +9,9 @@ export const VIEW_CONFIG = {
     name: "consultation",
     path: "/consultation",
   },
+  CHAT: {
+    label: "チャット",
+    name: "chat",
+    path: "/chat/:partnerId",
+  },
 } as const;

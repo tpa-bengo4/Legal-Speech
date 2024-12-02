@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { Message, Attachment } from "@/types";
-import { CONSULTATION_LIST_ITEM_IMAGE_DIMENSION } from "@/constants";
+import { CONSULTATION_LIST_ITEM_IMAGE_DIMENSION, VIEW_CONFIG } from "@/constants";
+import { useRouter } from "vue-router";
 
 const { HEIGHT: height, WIDTH: width } = CONSULTATION_LIST_ITEM_IMAGE_DIMENSION;
 
 interface Props {
+  userId: number;
   photoSource: string;
   name: string;
   lastMessage: Message;
@@ -12,11 +14,18 @@ interface Props {
   status: string;
 }
 
-const { photoSource, name, lastMessage, status } =
+const router = useRouter()
+function redriectChatScreen(userId: number){
+  router.push({name: VIEW_CONFIG.CHAT.name, params: {
+    partnerId: userId
+  }}) 
+}
+
+const { userId,  photoSource, name, lastMessage, status } =
   defineProps<Props>();
 </script>
 <template>
-  <div class="container">
+  <div class="container" @click="() => redriectChatScreen(userId)">
     <!--ステータスドット付きパートナー写真 -->
     <div class="photo-container">
       <img
