@@ -1,14 +1,18 @@
 <template>
     <div class="header">
             <img :src="BackIcon" class="img back-icon"/>
-            <UserAvatar class="img user-icon"/>
-            <h2> 名前 </h2>
+            <img :src="user.image" class="img user-icon"/>
+            <h2> {{ user.name }} </h2>
         </div>
 </template>
 
 <script setup lang="ts">
-import UserAvatar from "@/components/UserAvatar.vue"
 import BackIcon from "@/assets/images/back-svgrepo-com.svg"
+
+const user = defineProps<{
+  name: string,
+  image?: string
+}>()
 </script>
 
 <style lang="css" scoped>

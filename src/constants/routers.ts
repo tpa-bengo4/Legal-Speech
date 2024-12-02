@@ -12,6 +12,6 @@ export const VIEW_CONFIG = {
   CHAT: {
     label: "チャット",
     name: "chat",
-    path: "/chat",
+    path: "/chat/:partnerId",
   },
 } as const;
