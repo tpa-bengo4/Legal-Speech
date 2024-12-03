@@ -22,6 +22,9 @@ const handleTranslate = (event) => {
     </div>
 </template>
 <style scoped>
+.language-select-container {
+    margin-left: 40px;
+}
 #language-select {
 border-radius: 2px;
 margin-left: 5px;
