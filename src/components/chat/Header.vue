@@ -1,17 +1,22 @@
 <template>
     <div class="header">
-            <img :src="BackIcon" class="img back-icon"/>
-            <img :src="user.image" class="img user-icon"/>
-            <h2> {{ user.name }} </h2>
-        </div>
+      <RouterLink :to="VIEW_CONFIG.CONSULTATION_LIST.path">
+        <img :src="BackIcon" class="img back-icon"/>
+      </RouterLink>
+      <UserAvatar :source-avatar="user.image" :status="user.status" class="img user-icon" :width="'48px'" :height="'48px'"/>
+      <h2> {{ user.name }} </h2>
+    </div>
 </template>
 
 <script setup lang="ts">
 import BackIcon from "@/assets/images/back-svgrepo-com.svg"
+import UserAvatar from "../UserAvatar.vue";
+import { VIEW_CONFIG } from "@/constants";
 
 const user = defineProps<{
   name: string,
-  image?: string
+  image?: string,
+  status: string
 }>()
 </script>
 
@@ -24,7 +29,7 @@ h2 {
 }
 
 .header {
-  background-color: #d0d0d0;
+  background-color: #aaa;
   display: flex;
   align-items: center;
   justify-content: flex-start;

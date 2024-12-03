@@ -34,6 +34,7 @@ const { iconLink, text } = defineProps<{
   width: 36px;
   height: 36px;
   background-color: transparent;
+  margin-right: 16px;
 }
 
 .dropdown p {
