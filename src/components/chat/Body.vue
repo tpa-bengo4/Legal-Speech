@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template >
     <div class="chat-body">
         <div class="msg-page">
@@ -9,6 +10,7 @@
 <script setup lang="ts">
 import MessageText from "./MessageText.vue";
 import type { Message } from "@/types";
+
 const { messages } = defineProps<{
     messages?: Message[]
 }>()
@@ -17,5 +19,10 @@ const { messages } = defineProps<{
 <style lang="css" scoped>
 .chat-body {
     overflow-y: scroll;
+}
+
+.msg-page {
+    display: flex;
+    flex-direction: column;
 }
 </style>
