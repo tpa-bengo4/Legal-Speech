@@ -14,8 +14,9 @@ interface Props {
   status: string;
 }
 
-const router = useRouter()
-function redriectChatScreen(userId: number){
+const router = useRouter();
+
+function redirectChatScreen(userId: number){
   router.push({name: VIEW_CONFIG.CHAT.name, params: {
     partnerId: userId
   }}) 
@@ -25,7 +26,7 @@ const { userId,  photoSource, name, lastMessage, status } =
   defineProps<Props>();
 </script>
 <template>
-  <div class="container" @click="() => redriectChatScreen(userId)">
+  <div class="container" @click="() => redirectChatScreen(userId)">
     <!--ステータスドット付きパートナー写真 -->
     <div class="photo-container">
       <img

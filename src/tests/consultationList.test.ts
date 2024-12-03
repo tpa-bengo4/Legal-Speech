@@ -1,64 +1,55 @@
-import { mount } from "test-utils";
-import { describe, it, expect } from "vitest";
+import { mount } from "@vue/test-utils";
+import { describe, it, expect, vi } from "vitest";
 import ConsultationList from "@/components/consultation-list/ConsultationList.vue";
 import ConsultationListData from "@/assets/json/consultations-list.json";
 
 describe("ConsultationList", () => {
-  it("renders the list of consultations correctly", () => {
+  //相談の数が元のデータと一致することを確認します
+  it("相談一覧を正しく表示します", () => {
     const wrapper = mount(ConsultationList);
 
-    // Kiểm tra số lượng mục được hiển thị
     const items = wrapper.findAllComponents({ name: "ConsultationListItem" });
-    expect(items.length).toBe(ConsultationListData.consultations.length);
+    expect(items.length).toEqual(ConsultationListData.consultations.length);
 
-    // Kiểm tra nội dung của mục đầu tiên
+    //最初の相談の内容を確認します
     const firstItem = ConsultationListData.consultations[0];
-    expect(items[0].props().name).toBe(firstItem.name);
-    expect(items[0].props().status).toBe(firstItem.status);
+    expect(items[0].props().name).toEqual(firstItem.name);
+    expect(items[0].props().lastMessage).toEqual(firstItem.lastMessage);
+    expect(items[0].props().status).toEqual(firstItem.status);
   });
 
-  it("filters consultations based on search query", async () => {
+  //検索結果の長さを確認する
+  it("検索クエリに基づいて相談をフィルタリングします", async () => {
     const wrapper = mount(ConsultationList);
 
-    const searchQuery = "test"; // Một từ khóa giả lập
+    const searchQuery = "佐藤";
     await wrapper
       .findComponent({ name: "ConsultationListSearch" })
       .vm.$emit("change", searchQuery);
 
-    // Kiểm tra các mục được lọc đúng
+    //データに基づいた検索結果
     const filteredItems = ConsultationListData.consultations.filter(
       (consultation) =>
         consultation.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
+
+    //結果が表示される
     const renderedItems = wrapper.findAllComponents({
       name: "ConsultationListItem",
     });
-    expect(renderedItems.length).toBe(filteredItems.length);
+    expect(renderedItems.length).toEqual(filteredItems.length);
   });
 
-  it("shows empty message when no consultations are found", async () => {
+  //見つからないメッセージを確認する
+  it("相談が見つからない場合は空のメッセージを表示します", async () => {
     const wrapper = mount(ConsultationList);
 
-    const searchQuery = "nonexistent"; // Từ khóa không khớp với mục nào
+    const searchQuery = "nonexistent";
     await wrapper
       .findComponent({ name: "ConsultationListSearch" })
       .vm.$emit("change", searchQuery);
 
-    // Kiểm tra thông báo rỗng được hiển thị
     expect(wrapper.find(".empty-message").exists()).toBe(true);
     expect(wrapper.find(".empty-message").text()).toBe("相談が見つかりません");
   });
-
-  //   it('calls selectConsultation when a consultation is clicked', async () => {
-  //     const wrapper = mount(ConsultationList);
-  //     const mockSelectConsultation = vi.fn();
-  //     wrapper.vm.selectConsultation = mockSelectConsultation;
-
-  //     const firstItem = wrapper.findComponent({ name: 'ConsultationListItem' });
-  //     await firstItem.trigger('click');
-
-  //     // Kiểm tra sự kiện click được gọi với tham số đúng
-  //     const firstConsultation = ConsultationListData.consultations[0];
-  //     expect(mockSelectConsultation).toHaveBeenCalledWith(firstConsultation);
-  //   });
 });
