@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { ref, computed, nextTick } from "vue";
+import { ref, computed } from "vue";
 import FileListItem from "@/components/consultation-list/file-list/FileListItem.vue";
 import LeftIcon from "@/assets/svg/left.svg";
 import RightIcon from "@/assets/svg/right.svg";
-import { AttachMent } from "@/types";
 
 interface Props {
   fileList: File[];

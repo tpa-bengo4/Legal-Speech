@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     ...VIEW_CONFIG.CHAT,
-    component: () => import("@/views/ChatScreen.vue")
+    component: () => import("@/views/ChatScreen.vue"),
   },
 ];
 
