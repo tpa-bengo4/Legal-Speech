@@ -10,7 +10,7 @@
 import MessageText from "./MessageText.vue";
 import type { Message } from "@/types";
 const { messages } = defineProps<{
-    messages: Message[]
+    messages?: Message[]
 }>()
 </script>
 
