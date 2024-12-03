@@ -31,4 +31,10 @@ describe("ChatScreen", () => {
       expect(message.text()).toBeTruthy();
     });
   });
+
+  it("チャットの部分に、インプットとリーコードボタンがある", () => {
+    const wrapper = mount(ChatFrame);
+    expect(wrapper.find(".bottom input").exists()).toBeTruthy();
+    expect(wrapper.find(".bottom .voice-button").exists).toBeTruthy();
+  });
 });
