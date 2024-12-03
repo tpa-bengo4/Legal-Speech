@@ -69,7 +69,7 @@ const handleSearch = (query: string) => {
 }
 
 .consultation-list {
-  height: 80vh;
+  max-height: 70vh;
   overflow: scroll;
 }
 
